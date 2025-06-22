@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="city">
+        <option>Jabalpur</option>
+        <option>Jaipur</option>
+        <option>Jagdalpur</option>
+        <option>Nagpur</option>
+        <option>Kanpur</option>
+    </select>
+
+    <script>
+        let x = document.querySelector('select');
+
+        console.log(x);
+
+        console.log('```````````````````')
+
+        let y = x.options;
+
+        for(let nextOp of y) {
+            console.log(nextOp);
+        }
+    </script>
+</body>
+</html>
