@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Welcome Page</h2>
+
+    <hr>
+
+    <script>
+        // Case 1: function declaration
+        function pro(x, y) {
+            console.log('Hi', x, y);
+        }
+
+        pro(23, 24);
+
+        //Anonymous Function
+        // Case 2: Function Expression
+        let a = function(c, d) {
+            console.log('Hello', c, d);
+        }
+
+        a(56, 57);
+
+        // Case 3: Arrow Function
+        let r = (x, y) => console.log('jai ho', x, y);
+        // let r = x,y => console.log('jai ho', x, y); 
+        // Note: Multiple parameters → always use parentheses (x, y)
+
+        r(98, 99);
+    </script>
+</body>
+</html>
