@@ -6,17 +6,19 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>A 1</h1>
-    <h1>A 2</h1>
-    <h1>A 3</h1>
-    <h1>A 4</h1>
-    <h1>A 5</h1>
+    <h1>Hii 1</h1>
+    <h1>Hii 2</h1>
+    <h1>Hii 3</h1>
+    <h1>Hii 4</h1>
+    <h1>Hii 5</h1>
+    <h1>Hii 6</h1>
 
     <script>
         let x = document.querySelectorAll('h1');
 
         console.log(x);
 
+        // querySelectorAll returns a NodeList, which is iterable
         for(let next of x) {
             console.log(next);
         }
