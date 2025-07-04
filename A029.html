@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello 1</h1>
+    <h1>Hello 2</h1>
+    <h1>Hello 3</h1>
+    <h1>Hello 4</h1>
+    <h1>Hello 5</h1>
+
+    <script>
+        let htmlCollection = document.getElementsByTagName('h1'); 
+
+        console.log(htmlCollection);
+
+        let array = Array.from(htmlCollection);
+
+        console.log(array);
+
+        //Argument is a function(CallBack Function)
+        array.forEach((nextElement) => {
+            console.log(nextElement, '~~~~~~~');
+        });
+    </script>
+</body>
+</html>
