@@ -9,22 +9,20 @@
     <select name="city">
         <option>Jabalpur</option>
         <option>Jaipur</option>
-        <option>Jagdalpur</option>
-        <option>Nagpur</option>
         <option>Kanpur</option>
+        <option>Nagpur</option>
+        <option>Maharajpur</option>
     </select>
 
     <script>
-        let x = document.querySelector('select');
+        let htmlSelectElement = document.querySelector('select');
 
-        console.log(x);
+        console.log(htmlSelectElement);
 
-        console.log('```````````````````')
+        let optionsHTMLCollection = htmlSelectElement.options;
 
-        let y = x.options;
-
-        for(let nextOp of y) {
-            console.log(nextOp);
+        for(let nextOption of optionsHTMLCollection) {
+            console.log(nextOption);
         }
     </script>
 </body>
