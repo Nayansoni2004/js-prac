@@ -6,19 +6,17 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="A12.html">
-
+    <form action="A012.html">
         <p><input type="text" name="unm" placeholder="Enter Name"></p>
         <p><input type="email" name="eml" placeholder="Enter Email"></p>
         <p><input type="tel" name="phn" placeholder="Enter Phone"></p>
 
         <input type="submit" value="Save">
     </form>
-    
-    <hr>
-    
-    <form action="A13.html">
 
+    <hr>
+
+    <form action="A013.html">
         <p><input type="text" name="unm" placeholder="Enter Name"></p>
         <p><input type="email" name="eml" placeholder="Enter Email"></p>
         <p><input type="tel" name="phn" placeholder="Enter Phone"></p>
@@ -26,11 +24,10 @@
 
         <input type="submit" value="Save">
     </form>
-    
-    <hr>
-    
-    <form action="A13.html">
 
+    <hr>
+
+    <form action="A014.html">
         <p><input type="text" name="unm" placeholder="Enter Name"></p>
         <p><input type="email" name="eml" placeholder="Enter Email"></p>
         <p><input type="tel" name="phn" placeholder="Enter Phone"></p>
@@ -41,15 +38,14 @@
     </form>
 
     <script>
+        let htmlCollection = document.getElementsByTagName('form'); //returns form elements in HTML Collection
+        console.log(htmlCollection, htmlCollection.length);
 
-        let x = document.getElementsByTagName('form');
-        console.log(x, x.length);
+        let nodeList = document.querySelectorAll('form'); //returns form elements in NodeList
+        console.log(nodeList, nodeList.length);
 
-        let y = document.querySelectorAll('form');
-        console.log(y, y.length);
-
-        let z = document.forms;
-        console.log(z, z.length);
+        let allHtmlCollection = document.forms; //special property it also returns form elements in HTML Collection
+        console.log(allHtmlCollection, allHtmlCollection.length);
 
     </script>
 </body>
