@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="jiyan.png" height="300">
+    <img src="nobita.png" height="300">
+    <img src="kaliya.png" height="300">
+    <img src="hathodi.png" height="300">
+    <img src="raju.png" height="300">
+
+    <script>
+        let htmlCollection = document.getElementsByTagName('img'); //returns all img elements in HTML collection data-structure
+        console.log(htmlCollection);
+
+        let nodeList = document.querySelectorAll('img'); //returns all img elements in NodeList which is iterable using forEach
+        console.log(nodeList);
+
+        let allImgsHtmlCollection = document.images; //special built-in property which returns all img elements in (HTML Collection)
+        console.log(allImgsHtmlCollection);
+    </script>
+</body>
+</html>
