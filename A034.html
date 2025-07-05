@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="A012.html">A12 Page</a> <br><br>
+    <a href="A013.html">A13 Page</a> <br><br>
+    <a href="A014.html">A14 Page</a> <br><br>
+    <a href="A015.html">A15 Page</a> <br><br>
+    <a name="golu">Golu A Named Anchor</a>
+
+    <script>
+        let htmlCollection = document.getElementsByTagName('a');
+        let nodeList = document.querySelectorAll('a');
+        let nameAttribute = document.anchors; //returns anchor with name attribute
+        let hrefAttributes = document.links; //returns anchor with href attributes
+
+        console.log(htmlCollection, htmlCollection.length);
+        console.log(nodeList, nodeList.length);
+        console.log(nameAttribute, nameAttribute.length);
+        console.log(hrefAttributes, hrefAttributes.length);
+    </script>
+</body>
+</html>
