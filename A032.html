@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello 1</h1>
+    <h1 class="a">Hello 2</h1>
+    <h1>Hello 3</h1>
+    <h1>Hello 4</h1>
+    <h1 class="a">Hello 5</h1>
+
+    <script>
+        // mutiple elements can have same class but cannot have same id
+        let htmlCollection = document.getElementsByClassName('a');
+
+        console.log(htmlCollection);
+    </script>
+</body>
+</html>
