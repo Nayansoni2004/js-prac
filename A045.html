@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Landing Page</h1>
+
+    <hr>
+
+    <input type="button" id="aa" value="Save">
+
+    <script>
+        const singleHtmlElement = document.querySelector('#aa');
+
+
+        // singleHtmlElement.onclick = process;
+        singleHtmlElement.addEventListener('click', function() {
+            console.log('Hey, its anonymous function inside add event listerner');
+        });
+    </script>
+</body>
+</html>
