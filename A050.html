@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome Page</h1>
+
+    <hr>
+
+    <div style="border: 3px solid red" id="box">
+        <h1>Hello 1</h1>
+        <h1>Hello 2</h1>
+        <h1>Hello 3</h1>
+        <h1>Hello 4</h1>
+        <h1>Hello 5</h1>
+    </div>
+
+    <input type="button" value="Delete Node" id="btn">
+
+    <script>
+        let box = document.querySelector('#box');
+        let btn = document.querySelector('#btn');
+
+        box.addEventListener('click', (event) => {
+            console.log(event.target);
+        });
+
+        // let realArray = Array.from(box.children);
+
+        // let delNode = null;
+
+        // realArray.forEach((nextElement) => {
+        //     nextElement.addEventListener('click', (event) => {
+        //         box.removeChild(event.target);
+        //     });
+        // });
+    </script>
+</body>
+</html>
