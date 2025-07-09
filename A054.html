@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h1 {
+            border: 3px solid green;
+        }
+
+        .a {
+            color: white;
+            background-color: rgb(4, 49, 15);
+            box-shadow: 15px 15px 15px #d5d2d2;
+        }
+
+        .b {
+            color: black;
+            background-color: white;
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome PAge</h1>
+
+    <hr>
+
+    <div style="border: 5px solid red" id="box">
+        <h1>Jai ho 1</h1>
+        <h1>Jai ho 2</h1>
+        <h1>Jai ho 3</h1>
+        <h1>Jai ho 4</h1>
+        <h1>Jai ho 5</h1>
+    </div>
+
+    <input type="button" value="Delete Node" id="btn">
+
+    <script>
+        let box = document.querySelector('#box');
+        let btn = document.querySelector('btn');
+
+        box.addEventListener('mouseover', (event) => {
+            if(event.target.tagName == 'H1') {
+                if(event.target.classList.length == 0) //meaning no class is applied on the element before
+                    event.target.classList.add('a');
+                else
+                    event.target.classList.replace('b', 'a');
+
+                    // event.target.className = 'a';
+            }
+        });
+
+        box.addEventListener('mouseout', (event) => {
+            if(event.target.tagName == 'H1')
+                event.target.classList.replace('a', 'b');
+                // event.target.className = 'b';
+        });
+    </script>
+</body>
+</html>
