@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h1 {
+            border: 3px solid green;
+        }
+
+        .a {
+            color: rgb(246, 255, 0);
+            background-color: rgb(255, 21, 0);
+            box-shadow: 15px 15px 15px #c9c4c4;
+        }
+
+        .b {
+            color: black;
+            background-color: white;
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Landing Page</h1>
+
+    <hr>
+
+    <div style="border: 5px solid red" id="box">
+        <h1>Jai ho 1</h1>
+        <h1>Jai ho 2</h1>
+        <h1>Jai ho 3</h1>
+        <h1>Jai ho 4</h1>
+        <h1>Jai ho 5</h1>
+    </div>
+
+    <input type="button" value="Delete Node" id="btn"> <!--button is not used only made-->
+
+    <script>
+        let box = document.querySelector('#box');
+        let btn = document.querySelector('#btn');
+
+        box.addEventListener('mouseover', (event) => {
+            if(event.target.tagName == 'H1') {
+                event.target.className = 'a';
+                // event.target.style.color = 'blue';
+                // event.target.style.backgroundColor = 'yellow';
+                // event.target.style.boxShadow = '15px 15px 15px #ccc';
+            }
+        });
+
+        box.addEventListener('mouseout', (event) => {
+            if(event.target.tagName == 'H1') {
+                event.target.className = 'b';
+                // event.target.style.color = 'black';
+                // event.target.style.backgroundColor = 'white';
+                // event.target.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
