@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>The Half Engineers 3</h2>
+
+    <hr>
+
+    <script>
+        let x = new XMLHttpRequest(); //initialized object for ajax request
+
+        console.log(x.readyState); // 0
+
+        x.open('get', 'https://jsonplaceholder.typicode.com/todos/1', true); //configured/prepared request to send.
+
+        console.log(x.readyState); // 1
+
+        let handleResponse = () => {
+            console.log(x.readyState + '~~~~~~');
+        };
+
+        x.onreadystatechange = handleResponse;
+
+        x.send(); //request is sent to server on specified url
+
+    </script>
+</body>
+</html>
+
+<!-- 'get' method is used to receive data from server & 'post' method is used to send data to server.
+
+https://jsonplaceholder.typicode.com/ 
+https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState
+
+Value	State	Description
+0	    UNSENT	Client has been created. open() not called yet.
+1	    OPENED	open() has been called.
+2	    HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	    LOADING	Downloading; responseText holds partial data.
+4	    DONE	The operation is complete.
+-->
