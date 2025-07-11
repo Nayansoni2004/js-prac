@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>The Half Engineers 3</h2>
+
+    <hr>
+    
+    <script>
+        let x = new XMLHttpRequest(); //request is initialized
+
+        console.log(x.readyState); //readyState returns stage of request 
+
+        x.open('get', 'act.do', true); //request is configured, means prepared to send but not sent yet.
+
+        console.log(x.readyState);
+    </script>
+</body>
+</html>
