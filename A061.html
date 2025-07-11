@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>The Half Engineers 3</h2>
+
+    <hr>
+
+    <script>
+        let x = new XMLHttpRequest(); //initialized ajax request
+
+        x.open('get', 'https://jsonplaceholder.typicode.com/todos/100', true);//prepared/configured (ready to send)request
+
+        let handleResponse = () => {
+            if(x.readyState == 4 && x.status == 200) { //200 means server responsed Okk and 4 means request completed
+                console.log(x.responseText);
+            }
+        };
+
+        x.onreadystatechange = handleResponse;
+
+        x.send();
+    </script>
+</body>
+</html>
+
+<!-- output 
+{
+  "userId": 5,
+  "id": 100,
+  "title": "excepturi a et neque qui expedita vel voluptate",
+  "completed": false
+} -->
