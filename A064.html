@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Index Page</h1>
+
+    <hr>
+
+    <input type="button" id="btn" value="Send Request">
+
+    <script>
+        const btn = document.querySelector('#btn');
+
+        let sendRequest = () => {
+            let req = new XMLHttpRequest();
+
+            req.open('GET', 'https://jsonplaceholder.typicode.com/todos/12', true);
+
+            req.addEventListener('readystatechange', () => {
+                console.log(req.readyState);
+            });
+
+            req.send();
+        };
+
+        btn.addEventListener('click', sendRequest);
+ 
+    </script>
+</body>
+</html>
