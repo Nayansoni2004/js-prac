@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Index Page</h1>
+
+    <hr>
+
+    <table border="1" width="70%" align="center">
+        <caption>
+            <input type="button" value="Show Records" id="btn">
+        </caption>
+        <thead>
+            <tr>
+                <th>User Id</th>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Completed</th>
+            </tr>
+        </thead>
+        <tbody id="a">
+
+        </tbody>
+    </table>
+
+    <script>
+        let a = document.querySelector('#a');
+        let btn = document.querySelector('#btn');
+
+        btn.addEventListener('click', () => {
+            let req = new XMLHttpRequest();
+
+            req.open('GET', 'https://jsonplaceholder.typicode.com/todos/', true);
+
+            req.addEventListener('readystatechange', () => {
+                if(req.readyState == 4 && req.status == 200) {
+                    let resp = req.responseText;
+                    console.log(typeof resp);
+                    console.log(resp.length);
+                    console.log(resp);
+                }
+            });
+
+            req.send();
+        });
+    </script>
+</body>
+</html>
