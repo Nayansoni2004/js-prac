@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Index Page</h1>
+
+    <hr>
+
+    <table border="1" align="center" width="20%">
+        <tr>
+            <th>User Id</th>
+            <td id="a">User Id</td>
+        </tr>
+        <tr>
+            <th>Id</th>
+            <td id="b">Id</td>
+        </tr>
+        <tr>
+            <th>Title</th>
+            <td id="c">Title</td>
+        </tr>
+        <tr>
+            <th>Completed</th>
+            <td id="d">Completed</td>
+        </tr>
+    </table>
+
+    <input type="button" id="btn" value="Send Request">
+
+    <script>
+        const btn = document.querySelector('#btn');
+        const record = document.querySelector('#record');
+
+        const a = document.querySelector('#a');
+        const b = document.querySelector('#b');
+        const c = document.querySelector('#c');
+        const d = document.querySelector('#d');
+        
+        let sendRequest = () => {
+            let req = new XMLHttpRequest();
+
+            req.open('GET', 'https://jsonplaceholder.typicode.com/todos/12', true);
+
+            req.addEventListener('readystatechange', () => {
+                if(req.readyState==4 && req.status==200) {                    
+                    let respObj = JSON.parse(req.responseText);
+
+                    a.innerText = respObj.userId;
+                    b.innerText = respObj.id;
+                    c.innerText = respObj.title;
+                    d.innerText = respObj.completed;
+                }
+            });
+
+            req.send();
+        };
+
+        btn.addEventListener('click', sendRequest);
+ 
+    </script>
+</body>
+</html>
