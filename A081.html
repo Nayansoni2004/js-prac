@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Index Page</h1>
+
+    <hr>
+
+    <script>
+        // let x = '{"name": "om", "age": "12", "completed": "true", "dob": "2024-11-02"}';  //Legal json string
+        let x = '{"name": "om", "age": 12, "completed": true, "dob": "2024-11-02"}';  //Legal json string
+
+        console.log(typeof x);
+        console.log(x);
+
+        let y = JSON.parse(x);
+
+        console.log(y);
+    </script>
+</body>
+</html>
