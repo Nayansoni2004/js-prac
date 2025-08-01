@@ -6,21 +6,20 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Index Page</h1>
+    <h3>The Half Engineers 3</h3>
 
     <hr>
 
-    <script>        
+    <script>
+        let x = new XMLHttpRequest(); //initialized ajax object
 
-        let x = new XMLHttpRequest();
-
-        x.open('get', 'https://jsonplaceholder.typicode.com/todos/100', true);
+        x.open('GET', 'https://jsonplaceholder.typicode.com/todos/100', true); //prepared/configured request
 
         let handleResponse = () => {
-            if(x.readyState == 4 && x.status == 200) {
-                console.log('~~~~~~~~~~~~~');
+            if(x.readyState == 4 && x.status == 200) { //(200 means server responded okk) and (4 means request completed)   
+                console.log('~~~~~~~~~~~~~~~');
                 console.log(x.responseText);
-                console.log('~~~~~~~~~~~~~');
+                console.log('~~~~~~~~~~~~~~~');
             }
         };
 
@@ -31,3 +30,14 @@
     </script>
 </body>
 </html>
+
+<!-- OUTPUT:
+~~~~~~~~~~~~~~~
+{
+  "userId": 5,
+  "id": 100,
+  "title": "excepturi a et neque qui expedita vel voluptate",
+  "completed": false
+}
+~~~~~~~~~~~~~~~ 
+-->
