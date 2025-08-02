@@ -6,11 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Index Page</h1>
+    <h1>This is Index Page</h1>
 
     <hr>
 
-    <table border="1" align="center" width="20%">
+    <table border="3" align="center" width="40%">
         <tr>
             <th>User Id</th>
             <td id="a">User Id</td>
@@ -33,34 +33,33 @@
 
     <script>
         const btn = document.querySelector('#btn');
-        const record = document.querySelector('#record');
-
+        
         const a = document.querySelector('#a');
         const b = document.querySelector('#b');
         const c = document.querySelector('#c');
         const d = document.querySelector('#d');
-        
+
         let sendRequest = () => {
-            let req = new XMLHttpRequest();
+            let request = new XMLHttpRequest();
 
-            req.open('GET', 'https://jsonplaceholder.typicode.com/todos/12', true);
+            request.open('GET', 'https://jsonplaceholder.typicode.com/todos/14', true);
 
-            req.addEventListener('readystatechange', () => {
-                if(req.readyState==4 && req.status==200) {                    
-                    let respObj = JSON.parse(req.responseText);
+            request.addEventListener('readystatechange', () => {
+                if(request.readyState == 4 && request.status == 200) {
+                    console.log(request.responseText);
+                    let responseObject = JSON.parse(request.responseText);
 
-                    a.innerText = respObj.userId;
-                    b.innerText = respObj.id;
-                    c.innerText = respObj.title;
-                    d.innerText = respObj.completed;
+                    a.innerText = responseObject.userId;
+                    b.innerText = responseObject.id;
+                    c.innerText = responseObject.title;
+                    d.innerText = responseObject.completed;
                 }
             });
 
-            req.send();
+            request.send();
         };
 
         btn.addEventListener('click', sendRequest);
- 
     </script>
 </body>
 </html>
