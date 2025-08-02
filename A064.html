@@ -6,29 +6,34 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Index Page</h1>
+    <h2>Index Page</h2>
 
     <hr>
 
     <input type="button" id="btn" value="Send Request">
 
     <script>
-        const btn = document.querySelector('#btn');
+        const btn = document.querySelector("#btn");
 
         let sendRequest = () => {
-            let req = new XMLHttpRequest();
+            let request = new XMLHttpRequest();
 
-            req.open('GET', 'https://jsonplaceholder.typicode.com/todos/12', true);
+            request.open('get', 'https://jsonplaceholder.typicode.com/todos/12', true); //true means request is asynchronous...
 
-            req.addEventListener('readystatechange', () => {
-                console.log(req.readyState);
+            request.addEventListener('readystatechange', () => {
+                    console.log(request.readyState);
             });
 
-            req.send();
-        };
+            request.send();
+        }
 
         btn.addEventListener('click', sendRequest);
- 
     </script>
 </body>
 </html>
+<!-- 
+OUTPUT:
+2 HEADERS_RECEIVED 
+3 LOADING (receiving data)
+4 DONE (full response received)
+  -->
