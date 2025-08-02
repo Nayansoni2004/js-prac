@@ -6,32 +6,40 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Index Page</h1>
+    <h2>Index Page</h2>
 
     <hr>
 
-    <h1 id="record">No Records Found</h1>
+    <h1 id="record">No Records Found!</h1>
 
     <input type="button" id="btn" value="Send Request">
 
     <script>
         const btn = document.querySelector('#btn');
         const record = document.querySelector('#record');
-        
+
         let sendRequest = () => {
-            let req = new XMLHttpRequest();
+            let request = new XMLHttpRequest();
 
-            req.open('GET', 'https://jsonplaceholder.typicode.com/todos/12', true);
+            request.open('GET', 'https://jsonplaceholder.typicode.com/todos/12', true);
 
-            req.addEventListener('readystatechange', () => {
-                record.innerText = req.responseText;
+            request.addEventListener('readystatechange', () => {
+                record.innerText = request.responseText;
             });
 
-            req.send();
+            request.send();
         };
 
         btn.addEventListener('click', sendRequest);
- 
     </script>
 </body>
 </html>
+<!-- printed response in browser window i.e. index page
+OUTPUT:
+{
+"userId": 1,
+"id": 12,
+"title": "ipsa repellendus fugit nisi",
+"completed": true
+}
+  -->
