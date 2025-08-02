@@ -6,29 +6,28 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Index Page</h1>
+    <h2>Index Page</h2>
 
     <hr>
 
-    <script>        
+    <script>
+        let x = new XMLHttpRequest(); //initialized ajax request object
 
-        let x = new XMLHttpRequest();
-
-        x.open('get', 'https://jsonplaceholder.typicode.com/todos/78', true);
+        x.open('GET', 'https://jsonplaceholder.typicode.com/todos/78', true);//prepared/configured request
 
         // let handleResponse = () => {
-        //     if(x.readyState == 4 && x.status == 200) {
+        //     if(x.readtState == 4 && x.status == 200) { //(200 means server responsed okk) & (4 means request is completed)
         //         console.log('~~~~~~~~~~~~~');
         //         console.log(x.responseText);
         //         console.log('~~~~~~~~~~~~~');
         //     }
-        // };
+        // }
 
         // x.onreadystatechange = handleResponse;
         // x.addEventListener('readystatechange', handleResponse);
         x.addEventListener('readystatechange', () => {
             if(x.readyState == 4 && x.status == 200) {
-                console.log(x.responseText);
+                console.log(x.responseText); //responseText print the result in String format...
             }
         });
 
@@ -36,3 +35,13 @@
     </script>
 </body>
 </html>
+
+<!-- 
+OUTPUT:
+{
+  "userId": 4,
+  "id": 78,
+  "title": "reiciendis est magnam amet nemo iste recusandae impedit quaerat",
+  "completed": false
+}
+   -->
