@@ -29,23 +29,23 @@
 
     <script>
         let a = document.querySelector('#a');
-        let btn = document.querySelector('#btn');
+        let btn = document.querySelector("#btn");
 
         btn.addEventListener('click', () => {
-            let req = new XMLHttpRequest();
+            let request = new XMLHttpRequest(); //initialized request object
 
-            req.open('GET', 'https://jsonplaceholder.typicode.com/todos/', true);
+            request.open('GET', 'https://jsonplaceholder.typicode.com/todos/', true);
 
-            req.addEventListener('readystatechange', () => {
-                if(req.readyState == 4 && req.status == 200) {
-                    let resp = req.responseText;
-                    console.log(typeof resp);
-                    console.log(resp.length);
-                    console.log(resp);
+            request.addEventListener('readystatechange', () => {
+                if(request.readyState == 4 && request.status == 200) {
+                    let response = request.responseText;
+                    console.log(typeof response); //string
+                    console.log(response.length); //length is a property
+                    console.log(response);
                 }
             });
 
-            req.send();
+            request.send();
         });
     </script>
 </body>
