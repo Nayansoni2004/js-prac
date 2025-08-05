@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Index Page</h1>
+    <h1>Index Pagee</h1>
 
     <hr>
 
@@ -32,27 +32,26 @@
         let btn = document.querySelector('#btn');
 
         btn.addEventListener('click', () => {
-            let req = new XMLHttpRequest();
+            let request = new XMLHttpRequest();
 
-            req.open('GET', 'https://jsonplaceholder.typicode.com/todos/', true);
+            request.open('GET', 'https://jsonplaceholder.typicode.com/todos/', true);
 
-            req.addEventListener('readystatechange', () => {
-                if(req.readyState == 4 && req.status == 200) {
-                    let resp = JSON.parse(req.responseText);
+            request.addEventListener('readystatechange', () => {
+                if(request.readyState == 4 && request.status == 200) {
+                    let response = JSON.parse(request.responseText);
 
-                    for(let next of resp) {
-                        let row = document.createElement('tr');
-                        a.append(row);
-                        for(let prop in next) {
-                            let col = document.createElement('td');
-                            col.innerText = prop;
-                            row.append(col);
+                    for(let nextObj of response) { //fetching object from json array
+                        let row = document.createElement('tr'); //create row for each object
+                        a.append(row); //insert row in tbody
+                        for(let property in nextObj) { //fetch property(key) from each object
+                            let column = document.createElement('td'); //table data(create column for each property in object)
+                            column.innerText = property; //insert property in each column
+                            row.append(column); //insert column in that row
                         }
-                    }
+                    } 
                 }
             });
-
-            req.send();
+            request.send();
         });
     </script>
 </body>
