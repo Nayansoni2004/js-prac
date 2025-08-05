@@ -32,24 +32,23 @@
         let btn = document.querySelector('#btn');
 
         btn.addEventListener('click', () => {
-            let req = new XMLHttpRequest();
+            let request = new XMLHttpRequest(); //initialized ajax req.
 
-            req.open('GET', 'https://jsonplaceholder.typicode.com/todos/', true);
+            request.open('GET', 'https://jsonplaceholder.typicode.com/todos/', true); //prepared ajax req.
 
-            req.addEventListener('readystatechange', () => {
-                if(req.readyState == 4 && req.status == 200) {
-                    let resp = JSON.parse(req.responseText);
-
-                    for(let next of resp) {
-                        for(let prop in next) {
-                            console.log(prop);
+            request.addEventListener('readystatechange', () => {
+                if(request.readyState == 4 && request.status == 200) {
+                    let response = JSON.parse(request.responseText);
+                    for(let nextObj of response) { //fetching each object from array 
+                        for(let property in nextObj) { //fetching property of each object
+                            console.log(property); //printing property of each object
                         }
-                        console.log('~~~~~~~~~~~~~');
+                        console.log('~~~~~~~~~~~');
                     }
                 }
             });
 
-            req.send();
+            request.send();
         });
     </script>
 </body>
