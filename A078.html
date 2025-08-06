@@ -11,21 +11,27 @@
     <hr>
 
     <script>
+        let x = {name: 'John Doe', age: 21, college: 'gyan ganya'};
 
-        let x = {name: 'mohan', age: 12, college: 'global'};
+        // console.log(typeof x); //object
+        // console.log(x); //entire object
 
-        // console.log(typeof x);
-        // console.log(x);
+        //iterating object
 
-        // for(let prop in x) {
-        //     console.log(prop, typeof prop);
-        //     console.log(x.prop);
+        // for(let nextProp in x) { //for... in give keys as String
+        //     console.log(nextProp, typeof nextProp);
+        //     console.log(x.nextProp); //undefined because object x not contains any property named nextProp
         // }
 
         console.log(x.name, x['name']);
         console.log(x.age, x['age']);
         console.log(x.college, x['college']);
-            
+
     </script>
 </body>
 </html>
+
+<!-- OUTPUT: 
+John Doe John Doe
+21 21
+gyan ganya gyan ganya -->
