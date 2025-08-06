@@ -11,17 +11,29 @@
     <hr>
 
     <script>
+        let x = {name : 'John Doe', age: 21, college: 'gyan ganga'};
 
-        let x = {name: 'mohan', age: 12, college: 'global'};
+        // console.log(typeof x); //object
+        // console.log(x); //entire object
 
-        // console.log(typeof x);
-        // console.log(x);
-
-        for(let prop in x) {
-            console.log(prop, typeof prop);
-            console.log(x.prop);
+        //iterating object
+        for(let nextProp in x) { //for... in gives keys as String
+            console.log(nextProp, typeof nextProp);
+            console.log(x.nextProp);
         }
-            
     </script>
 </body>
 </html>
+
+<!-- OUTPUT
+ name string
+undefined
+age string
+undefined
+college string
+undefined -->
+
+<!-- reason:
+x.prop means “find a property literally named prop” in object x.
+Since x has no key "prop", it always gives undefined.
+To access dynamically, you need x[prop] (not x.prop). -->
