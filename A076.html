@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Index Page</h1>
+    <h1>Index PAge</h1>
 
     <hr>
 
@@ -32,27 +32,25 @@
         let btn = document.querySelector('#btn');
 
         btn.addEventListener('click', () => {
-            let req = new XMLHttpRequest();
+            let request = new XMLHttpRequest();
 
-            req.open('GET', 'https://jsonplaceholder.typicode.com/todos/', true);
+            request.open('GET', 'https://jsonplaceholder.typicode.com/todos/', true);
 
-            req.addEventListener('readystatechange', () => {
-                if(req.readyState == 4 && req.status == 200) {
-                    let resp = JSON.parse(req.responseText);
-
-                    for(let next of resp) {
-                        let row = document.createElement('tr');
-                        a.append(row);
-                        for(let prop in next) {
-                            let col = document.createElement('td');
-                            col.innerText = next[prop];
-                            row.append(col);
+            request.addEventListener('readystatechange', () => {
+                if(request.readyState == 4 && request.status == 200) {
+                    let response = JSON.parse(request.responseText); //response is an array containing multiple objects
+                    for(let nextObj of response) { //iterating array
+                        let row = document.createElement('tr'); //create table row for each object
+                        a.append(row); //insert row in tbody
+                        for(let property in nextObj) { //iteraing object(fetching properties from object)
+                            let column = document.createElement('td'); //create column for each property in a row
+                            column.innerText = nextObj[property]; //fetch particular value from object key is passed each time
+                            row.append(column); //insert column in a row
                         }
                     }
                 }
             });
-
-            req.send();
+            request.send();
         });
     </script>
 </body>
