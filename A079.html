@@ -32,31 +32,27 @@
         let btn = document.querySelector('#btn');
 
         btn.addEventListener('click', () => {
-            let req = new XMLHttpRequest();
+            let request = new XMLHttpRequest();
 
-            req.open('GET', 'https://jsonplaceholder.typicode.com/todos/', true);
+            request.open('GET', 'https://jsonplaceholder.typicode.com/todos/', true);
 
-            req.addEventListener('readystatechange', () => {
-                if(req.readyState == 4 && req.status == 200) {
-                    let resp = JSON.parse(req.responseText);
-
+            request.addEventListener('readystatechange', () => {
+                if(request.readyState == 4 && request.status == 200) {
+                    let response = JSON.parse(request.responseText); //it returns array containing 200 todo object
+                    //iterating array
                     let i = 0;
-                    for(let next of resp) {
+                    for(let nextObj of response) {
                         let row = a.insertRow(i++);
-                        // let row = document.createElement('tr');
-                        // a.append(row);
+                        //iterating particular object
                         let j = 0;
-                        for(let prop in next) {
-                            // let col = document.createElement('td');
+                        for(let nextProp in nextObj) {
                             let col = row.insertCell(j++);
-                            col.innerText = next[prop]+'~';
-                            // row.append(col);
+                            col.innerText = nextObj[nextProp] + '~';
                         }
-                    }
+                    } 
                 }
             });
-
-            req.send();
+            request.send();
         });
     </script>
 </body>
