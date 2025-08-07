@@ -11,14 +11,13 @@
     <hr>
 
     <script>
-        // let x = '{"name": "om", "age": "12", "completed": "true", "dob": "2024-11-02"}';  //Legal json string
-        let x = '{"name": "om", "age": 12, "completed": true, "dob": "2024-11-02"}';  //Legal json string
+        // let x = '{"name": "John Doe", "age": 12, "completed": true, "dob": "2025-08-19"}'; //legal JSON String
+        let x = '{"name": "John Doe", "age": "12", "completed": "true", "dob": "2025-08-19"}'; //legal JSON String
 
         console.log(typeof x);
         console.log(x);
 
         let y = JSON.parse(x);
-
         console.log(y);
     </script>
 </body>
