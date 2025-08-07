@@ -11,15 +11,18 @@
     <hr>
 
     <script>
-        // let x = '{name: "om", age: 12}';  //Illegal json string
-        let x = '{"name": "om", "age": 12, "completed": true, "dob": "2024-11-02"}';  //Legal json string
+        // let x = '{name: "John Doe", age: 12}'; //illegal JSON object
+        let x = '{"name": "John Doe", "age": 12, "completed": true, "dob": "2025-09-19"}'; //legal JSON object/string
 
         console.log(typeof x);
         console.log(x);
 
         let y = JSON.parse(x);
-
-        console.log(y);
+        console.log(y); //entire JSON object print hoga
     </script>
 </body>
 </html>
+
+<!-- OUTPUT 
+Uncaught SyntaxError: Expected property name or '}' in JSON at position 1 (line 1 column 2)
+    at JSON.parse (<anonymous>) -->
