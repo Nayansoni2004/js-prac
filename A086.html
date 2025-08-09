@@ -11,11 +11,16 @@
     <hr>
 
     <script>
-        let x = document.querySelector('h1');
+        let a = document.querySelector('h1');
 
-        console.log(x.innerText);
-        console.log(x.innerHTML);
-        console.log(x.textContent);
+        console.log(a.innerText); //print visible only
+        console.log(a.innerHTML); // print entrie raw code with tags
+        console.log(a.textContent); //print hidden + visible
     </script>
 </body>
 </html>
+
+<!-- OUTPUT 
+Index  welcomes you to new area of learning
+Index <span style="visibility:hidden">Page</span> welcomes you to new area<span> of learning</span>
+Index Page welcomes you to new area of learning -->
