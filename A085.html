@@ -6,16 +6,20 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Index <span style="display:none">Page</span> welcomes you to new area<span> of learning</span></h1>
+    <h1>Index <span style="display:none">Page</span> welcomes you to new area <span>of learning</span></h1>
 
     <hr>
 
     <script>
-        let x = document.querySelector('h1');
+        let a = document.querySelector('h1');
 
-        console.log(x.innerText);
-        console.log(x.innerHTML);
-        console.log(x.textContent);
+        console.log(a.innerText);
+        console.log(a.innerHTML);
+        console.log(a.textContent);
     </script>
 </body>
 </html>
+
+<!-- innerText = visible only.
+innerHTML = raw HTML with tags.
+textContent = pure text, hidden + visible dono. -->
