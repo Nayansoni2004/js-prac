@@ -10,19 +10,19 @@
 
     <hr>
 
-    <h1 id="a">Some Text...</h1>
+    <h1 id="a">SOme TExt...</h1>
 
     <button type="button" id="btn">Show Text</button>
 
     <script>
-        let name = 'Prabhat Shrivastava';
+        let name = 'John Doe';
         let age = 21;
-        let college = 'Global';
-        let marks = 89.88;
+        let college = 'Gyan Ganga';
+        let marks = 34.33;
 
-        // let str = 'My Name is: ' + name + ', My Age is: ' + age + ', My College: ' + college + ' and My Marks: ' + marks;
-        // let str = 'My Name is: name, My Age is: age, My College: college and My Marks: marks';
-        let str = `My Name is: ${name}, My Age is: ${age}, My College: ${college} and My Marks: ${marks}`;
+        // let str = 'My Name Is: name, My Age Is: age, My College: college and My Marks: marks;';
+        // let str = 'My Name IS: ' + name + ', My Age Is: ' + age + ', My college: ' + college + ' And My Marks: ' + marks;
+        let str = `My NAme Is: ${name}, My Age Is: ${age}, My College: ${college} and My Marks: ${marks}`;
 
         const a = document.querySelector('#a');
         const btn = document.querySelector('#btn');
@@ -30,7 +30,6 @@
         btn.addEventListener('click', () => {
             a.innerText = str;
         });
-        
     </script>
 </body>
 </html>
