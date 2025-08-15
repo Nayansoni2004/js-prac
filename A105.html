@@ -6,27 +6,37 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Index Page</h1>
+    <h1>INdex Page</h1>
 
     <hr>
 
     <script>
         const pro = async () => {
-            let response = await fetch('https://jsonplaceholder.typicode.com/todos/1'); 
-            let result = await response.text();  
-            
+            let response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+            let result = await response.text();
             return result;
         };
-        
+
         console.log(1);
         console.log(2);
-        pro().then((data)=>{
-            console.log(data, typeof data);
+        pro().then((data) => {
+            console.log(data);
+            console.log(typeof data);
         });
         console.log(3);
         console.log(4);
-        
-        
     </script>
 </body>
 </html>
+
+<!-- OUTPUT 
+1
+2
+3
+4
+{
+  "userId": 1,
+  "id": 1,
+  "title": "delectus aut autem",
+  "completed": false
+} string -->
