@@ -6,24 +6,32 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Index Page</h1>
+    <h1>Index PAge</h1>
 
     <hr>
 
     <script>
-        
-        
         console.log(1);
         console.log(2);
-        fetch('https://jsonplaceholder.typicode.com/todos/1').then((data)=>{
+        fetch('https://jsonplaceholder.typicode.com/todos/1').then((data) => {
             return data.json();
-        }).then((dt)=>{
+        }).then((dt) => {
             console.log(dt);
         });
         console.log(3);
         console.log(4);
-        
-        
     </script>
 </body>
 </html>
+
+<!-- Reason:
+fetch() → Promise return karta hai jo Response deta hai.
+Pehle .then() → data.json() call hua, jo ek aur Promise return karta hai.
+Dusre .then() → uska resolved JSON object (dt) console me print hua.
+Isliye 1,2,3,4 pehle print hue aur JSON baad me.
+OUTPUT:
+1
+2
+3
+4
+{userId: 1, id: 1, title: "delectus aut autem", completed: false} -->
