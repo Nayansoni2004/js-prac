@@ -48,7 +48,7 @@
 
     <script>
         const btn = document.querySelector('#btn');
-        const tds = document.querySelectorAll('td');
+        const tds = document.querySelectorAll('td'); //collecting all tds as NodeList
 
         const sendRequest = async () => {
             let respObj = await fetch('https://jsonplaceholder.typicode.com/todos/1');
