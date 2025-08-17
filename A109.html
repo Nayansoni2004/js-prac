@@ -57,7 +57,7 @@
         };
 
         btn.addEventListener('click', () => {
-            sendRequest().then((data) => {
+            sendRequest().then((data) => { //data is js-object
                 let i = 0;
                 for(let property in data) {
                     tds[i++].innerText = data[property];
