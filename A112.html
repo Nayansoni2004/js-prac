@@ -4,28 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     <style>
         table {
-            border: 1px solid red;
+            border: 1px solid gray;
             width: 70%;
-            border-radius: 7px;
             margin: 20px auto;
+            border-radius: 7px;
         }
 
-        tr{
+        tr {
             background-color: #f6f3f3;
             color: black;
-            
         }
 
         td {
-            
             width: fit-content;
         }
 
         tr:hover {
-            background-color: red;
+            background-color: aqua;
             color: white;
             cursor: pointer;
         }
@@ -48,35 +45,32 @@
             </tr>
         </thead>
         <tbody>
-            
-        </tbody>    
+
+        </tbody>
     </table>
 
     <script>
         const btn = document.querySelector('#btn');
         const tbody = document.querySelector('tbody');
 
-        const sendRequest = async () => {
-            let response = await fetch('https://jsonplaceholder.typicode.com/todos/');
-            let result = await response.json();
-
-            return result;
-        };        
+        const sendRequest = async() => {
+            let responseObject = await fetch('https://jsonplaceholder.typicode.com/todos/');
+            let jsobject = await responseObject.json();
+            return jsobject; //return array of todo objects
+        };
 
         btn.addEventListener('click', () => {
-            sendRequest().then((data) => {
+            sendRequest().then((data) => { //jsobject of todo objects
                 let i = 0;
-                for(let obj of data) {
+                for(let object of data) { //fetching object from array
                     let row = tbody.insertRow(i++);
-
                     let j = 0;
-                    for(let prop in obj) {
-                        let col = row.insertCell(j++);
-
-                        col.innerText = obj[prop];
+                    for(let property in object) { //fetching property(key) from particular object
+                        let column = row.insertCell(j++);
+                        column.innerText = object[property]; //object ki key : to value milegi
                     }
                 }
-            }).catch((err) => {
+            }).catch((err) => { //if error occurs
                 console.log(err);
             });
         });
