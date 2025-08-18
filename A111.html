@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     <style>
         table {
-            border: 1px solid red;
+            border: 1px solid gray;
             width: 70%;
             border-radius: 7px;
-            margin: 20px auto;
+            margin: 20px auto; 
         }
 
         td {
@@ -37,21 +36,20 @@
         </thead>
         <tbody>
             
-        </tbody>    
+        </tbody>
     </table>
 
     <script>
         const btn = document.querySelector('#btn');
 
-        const sendRequest = async () => {
-            let response = await fetch('https://jsonplaceholder.typicode.com/todos/');
-            let result = await response.json();
-
-            return result;
-        };        
+        const sendRequest = async() => {
+            let responseObject = await fetch('https://jsonplaceholder.typicode.com/todos/'); //fetch returns promise which is resp object
+            let javascriptObject = await responseObject.json(); //use javascript object notation to convert resp object into js object
+            return javascriptObject; //return json array of all todos
+        };
 
         btn.addEventListener('click', () => {
-            sendRequest().then((data) => {
+            sendRequest().then((data) => { //data is js object
                 console.log(data);
             }).catch((err) => {
                 console.log(err);
