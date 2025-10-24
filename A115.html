@@ -1,0 +1,27 @@
+<!-- Question:
+Write an HTML code that includes a file input element which, when accessed from a mobile device, automatically opens the front camera for
+ capturing a photo. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Index Page</h1>
+
+    <hr>
+
+    <input type="file" capture="user"> <!--this opens front camera on phone's browser -->
+</body>
+</html>
+
+<!-- 
+HOW TO TEST THIS CODE:
+This commit adds an <input type="file" capture="user"> element to trigger the front camera on mobile browsers.
+To test it:
+1. Run the project with VS Code Live Server.
+2. Find your PC’s IPv4 address using ipconfig.
+3. Open the same URL with that IP on your mobile (same Wi-Fi).
+4. Tap the file input — mobile’s front camera should open automatically. -->
